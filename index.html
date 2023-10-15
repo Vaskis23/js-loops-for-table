@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid white;
+        }
+        .main-diagonal {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let table = `<table>`;
+        for (let i = 0; i < 3; i++) {
+            table += `<tr>`;
+            for (let j = 0; j < 3; j++) {
+                if (i === j) {
+                    table += `<td class="main-diagonal">${i*3+j+1}</td>`;
+                } else {
+                    table += `<td>${i*3+j+1}</td>`;
+                }
+            }
+            table += `</tr>`;
+        }
+        table += `</table>`;
+
+        container.innerHTML = table;
+    </script>
+</body>
+</html>
